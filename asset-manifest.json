@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/reactjsproject/static/css/main.a617e044.chunk.css",
-    "main.js": "/reactjsproject/static/js/main.e10db338.chunk.js",
-    "main.js.map": "/reactjsproject/static/js/main.e10db338.chunk.js.map",
-    "runtime-main.js": "/reactjsproject/static/js/runtime-main.add8cef2.js",
-    "runtime-main.js.map": "/reactjsproject/static/js/runtime-main.add8cef2.js.map",
-    "static/js/2.add6d959.chunk.js": "/reactjsproject/static/js/2.add6d959.chunk.js",
-    "static/js/2.add6d959.chunk.js.map": "/reactjsproject/static/js/2.add6d959.chunk.js.map",
-    "static/js/3.7583c6de.chunk.js": "/reactjsproject/static/js/3.7583c6de.chunk.js",
-    "static/js/3.7583c6de.chunk.js.map": "/reactjsproject/static/js/3.7583c6de.chunk.js.map",
-    "index.html": "/reactjsproject/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/reactjsproject/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.add6d959.chunk.js.LICENSE.txt": "/reactjsproject/static/js/2.add6d959.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/reactjsproject/static/media/logo.6ce24c58.svg"
+    "main.css": "/reactJs-coderhouse/static/css/main.a617e044.chunk.css",
+    "main.js": "/reactJs-coderhouse/static/js/main.e10db338.chunk.js",
+    "main.js.map": "/reactJs-coderhouse/static/js/main.e10db338.chunk.js.map",
+    "runtime-main.js": "/reactJs-coderhouse/static/js/runtime-main.609a39f4.js",
+    "runtime-main.js.map": "/reactJs-coderhouse/static/js/runtime-main.609a39f4.js.map",
+    "static/js/2.add6d959.chunk.js": "/reactJs-coderhouse/static/js/2.add6d959.chunk.js",
+    "static/js/2.add6d959.chunk.js.map": "/reactJs-coderhouse/static/js/2.add6d959.chunk.js.map",
+    "static/js/3.7583c6de.chunk.js": "/reactJs-coderhouse/static/js/3.7583c6de.chunk.js",
+    "static/js/3.7583c6de.chunk.js.map": "/reactJs-coderhouse/static/js/3.7583c6de.chunk.js.map",
+    "index.html": "/reactJs-coderhouse/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/reactJs-coderhouse/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.add6d959.chunk.js.LICENSE.txt": "/reactJs-coderhouse/static/js/2.add6d959.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/reactJs-coderhouse/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.add8cef2.js",
+    "static/js/runtime-main.609a39f4.js",
     "static/js/2.add6d959.chunk.js",
     "static/css/main.a617e044.chunk.css",
     "static/js/main.e10db338.chunk.js"
