@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 class App extends Component {
   render() {
     return (
-      <div className='card'>
+      <div className='card' Style="width: 18rem; border-color: grey;">
       <div>
       <img src={this.props.Vino} className="card-img-top"  alt="icon"/>
       </div>
