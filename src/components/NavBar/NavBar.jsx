@@ -1,6 +1,7 @@
 import logo from './logo.png';
 import 'bootstrap/dist/css/bootstrap.css';
 import './NavBar.css'
+import CartWidget from './CartWidget/CartWidget.jsx'
 
 const NavBar =() => {
     return (              
@@ -23,9 +24,10 @@ const NavBar =() => {
           </div>   
         </div>     
         <div className="rightNav">          
-          <button type="button" className="btn btn-lg btn-secondary"><strong>Ingresa</strong></button>
-          <button type="button" className="btn btn-outline-light "><strong>Registrate</strong></button>
-        </div>      
+          <button type="button" className="btn btn-lg btn-secondary"><strong>Login</strong></button>
+          <button type="button" className="btn btn-outline-light "><strong>Sign-up</strong></button>
+          <CartWidget />
+        </div>     
         </nav>        
     )
 }

@@ -1,5 +1,6 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import ItemListCointainer from './components/ItemListContainer/ItemListContainer.jsx';
+import NavBar from './components/NavBar/NavBar.jsx';
 
 function App() {
   
@@ -8,9 +9,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-            <NavBar/>
+        <NavBar/>
       </header>
       <main className="App-main">
+        <ItemListCointainer />
       </main>
       <footer className="App-footer">
 
