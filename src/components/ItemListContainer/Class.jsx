@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import Counter from '../Counter/ItemCount.jsx'
 
 class App extends Component {
   render() {
+ 
     return (
       <div className='card' Style="width: 18rem; border-color: grey;">
       <div>
@@ -17,7 +19,7 @@ class App extends Component {
             this.props.valor
           }</strong>
         </p>
-        <a href="#" class="btn btn-primary">Comprar</a>
+        <Counter Initial="0" Stock="25"/>        
         </div>
       </div>
     )
