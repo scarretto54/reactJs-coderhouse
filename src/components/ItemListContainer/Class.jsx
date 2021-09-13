@@ -19,7 +19,7 @@ class App extends Component {
             this.props.valor
           }</strong>
         </p>
-        <Counter Initial="0" Stock="25"/>        
+        <Counter/>        
         </div>
       </div>
     )

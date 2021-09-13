@@ -3,17 +3,17 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Button from '../Button/Button.jsx'
 
 
-const Counter = () => {
+const Counter = (stock , initial) => {
     const [count, setCount] = useState(0)
     
-    const Initial = (25)
+  initial = (25)
     
-    const Stock = (Initial - count)
+  stock = (initial - count)
     
-    console.log(Stock)
+    console.log(stock)
     
-    const miFuncionRestar = () => {if (count <= 0) {console.log('no count')} else {setCount(count - 1)}};
-    const miFuncionSumar = () => {if (Stock <= 0) {console.log('no stock')} else {setCount(count + 1)}};
+    const miFuncionRestar = () => {if (count <= 0) {console.log('no count')} else {setCount(count - 1)}}
+    const miFuncionSumar = () => {if (stock <= 0) {console.log('no stock')} else {setCount(count + 1)}}
 
      
   return (
@@ -25,7 +25,7 @@ const Counter = () => {
                 <button id="suma" class="btn btn-outline-secondary" type="button" onClick={miFuncionSumar}><strong> + </strong></button>
             </div>
             <br/>
-            <Button myFunction={( count) => ( setCount(count = 0 ))} />    
+            <Button myFunction={(count) => ( setCount(count = 0 ))} />    
                   
         </div>       
     )       
