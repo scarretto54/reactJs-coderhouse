@@ -6,21 +6,22 @@ class App extends Component {
   render() {
  
     return (
-      <div className='card' Style="width: 18rem; border-color: grey;">
+      <div className='card' Style="width: 18rem;  border-color: grey;">
       <div>
-      <img src={this.props.Vino} className="card-img-top"  alt="icon"/>
+        <img src={this.props.imagen} className="card-img-top"  alt="icon"/>
       </div>
       <div class="card-body">
         <h5 className='card-title' Style='color: black; display:block; '><strong>{
-          this.props.item
+          this.props.title
         }</strong></h5>
         <p className="card-text" Style='color: black; display:block; '><strong>
           {
             this.props.valor
           }</strong>
         </p>
-        <Counter/>        
-        </div>
+        <Counter/> 
+        <button className='btn btn-secondary'><strong>Ver Descripcion</strong></button>
+      </div>
       </div>
     )
   }
