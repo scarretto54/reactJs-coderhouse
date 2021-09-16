@@ -18,16 +18,15 @@ const Counter = (stock , initial) => {
      
   return (
         
-        <div>
-                <h4 style={{ color: 'Black'}}><strong>{count}</strong></h4>                
-            <div class="btn-group" role="group">   
+        <>
+                <h4 style={{ color: 'Black'}}> <strong> {count} </strong> </h4>                
+            <div class="btn-group" role="group"> 
                 <button id="resta"class="btn btn-outline-secondary" type="button" onClick={miFuncionRestar}><strong> - </strong></button>
                 <button id="suma" class="btn btn-outline-secondary" type="button" onClick={miFuncionSumar}><strong> + </strong></button>
             </div>
             <br/>
             <Button myFunction={(count) => ( setCount(count = 0 ))} />    
-                  
-        </div>       
+        </>       
     )       
     
 };
