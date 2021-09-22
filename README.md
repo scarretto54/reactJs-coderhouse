@@ -1,3 +1,11 @@
+# Proyecto APP E-COMmERCE
+
+El proyecto se trata de un sitio e-commerce que tiene como objetivo la comercializacion de bebidas alcoholicas con varias capas de funcionalidad personalizada.
+La aplicacion utiliza componentes React-Js para adjuntar varias piezas de funcionalidad a los elementos DOM, permitiendo ver un listado de productos, navegar por categorias y seleccionar objetos a agregar a cart para generar un circuito completo de proceso de compra.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
