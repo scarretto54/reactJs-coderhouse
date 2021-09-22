@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/reactJs-coderhouse/static/css/main.7aacf3a6.chunk.css",
-    "main.js": "/reactJs-coderhouse/static/js/main.4d6b2835.chunk.js",
-    "main.js.map": "/reactJs-coderhouse/static/js/main.4d6b2835.chunk.js.map",
-    "runtime-main.js": "/reactJs-coderhouse/static/js/runtime-main.21b9098c.js",
-    "runtime-main.js.map": "/reactJs-coderhouse/static/js/runtime-main.21b9098c.js.map",
+    "main.css": "/reactJs-coderhouse/static/css/main.570ea015.chunk.css",
+    "main.js": "/reactJs-coderhouse/static/js/main.337baeb8.chunk.js",
+    "main.js.map": "/reactJs-coderhouse/static/js/main.337baeb8.chunk.js.map",
+    "runtime-main.js": "/reactJs-coderhouse/static/js/runtime-main.cf757efb.js",
+    "runtime-main.js.map": "/reactJs-coderhouse/static/js/runtime-main.cf757efb.js.map",
     "static/css/2.983f79de.chunk.css": "/reactJs-coderhouse/static/css/2.983f79de.chunk.css",
-    "static/js/2.02b81d5c.chunk.js": "/reactJs-coderhouse/static/js/2.02b81d5c.chunk.js",
-    "static/js/2.02b81d5c.chunk.js.map": "/reactJs-coderhouse/static/js/2.02b81d5c.chunk.js.map",
-    "static/js/3.1339be19.chunk.js": "/reactJs-coderhouse/static/js/3.1339be19.chunk.js",
-    "static/js/3.1339be19.chunk.js.map": "/reactJs-coderhouse/static/js/3.1339be19.chunk.js.map",
+    "static/js/2.5eb01a4b.chunk.js": "/reactJs-coderhouse/static/js/2.5eb01a4b.chunk.js",
+    "static/js/2.5eb01a4b.chunk.js.map": "/reactJs-coderhouse/static/js/2.5eb01a4b.chunk.js.map",
+    "static/js/3.c0efeb6b.chunk.js": "/reactJs-coderhouse/static/js/3.c0efeb6b.chunk.js",
+    "static/js/3.c0efeb6b.chunk.js.map": "/reactJs-coderhouse/static/js/3.c0efeb6b.chunk.js.map",
     "index.html": "/reactJs-coderhouse/index.html",
     "static/css/2.983f79de.chunk.css.map": "/reactJs-coderhouse/static/css/2.983f79de.chunk.css.map",
-    "static/css/main.7aacf3a6.chunk.css.map": "/reactJs-coderhouse/static/css/main.7aacf3a6.chunk.css.map",
-    "static/js/2.02b81d5c.chunk.js.LICENSE.txt": "/reactJs-coderhouse/static/js/2.02b81d5c.chunk.js.LICENSE.txt",
+    "static/css/main.570ea015.chunk.css.map": "/reactJs-coderhouse/static/css/main.570ea015.chunk.css.map",
+    "static/js/2.5eb01a4b.chunk.js.LICENSE.txt": "/reactJs-coderhouse/static/js/2.5eb01a4b.chunk.js.LICENSE.txt",
     "static/media/logo.2ac087e1.png": "/reactJs-coderhouse/static/media/logo.2ac087e1.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.21b9098c.js",
+    "static/js/runtime-main.cf757efb.js",
     "static/css/2.983f79de.chunk.css",
-    "static/js/2.02b81d5c.chunk.js",
-    "static/css/main.7aacf3a6.chunk.css",
-    "static/js/main.4d6b2835.chunk.js"
+    "static/js/2.5eb01a4b.chunk.js",
+    "static/css/main.570ea015.chunk.css",
+    "static/js/main.337baeb8.chunk.js"
   ]
 }
