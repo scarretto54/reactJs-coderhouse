@@ -1,10 +1,15 @@
 .App {
   text-align: center;
+  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 100% 15vh;
+    grid-template-areas: "header"
+                          "main"
+                          "footer";
 }
 
-
-
 .App-header {
+  grid-area: header;
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -14,17 +19,20 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.App-main {
-  background-color: #b1b1b1;
-  min-height: 90vh;
+.App-main {  
+  grid-area: main;
+  padding-left: 100px;
+  background-color: #e6e1e1;
+  min-height: 50vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(73, 73, 73);
 }
 .App-footer {
+  grid-area: footer;
   background-color: #949494;
   min-height: 15vh;
   display: flex;
