@@ -23,7 +23,7 @@ const NavBar = ({ categories, cartProducts }) => {
   return (
     <nav className="NavBar navbar navbar-dark navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div className="Nav-logo" >
-        <Link to='/'>
+        <Link to={'/reactJs-coderhouse/'}>
         <img src={logo} className="logo" alt="logo"/>
         </Link>
       </div>
@@ -32,7 +32,7 @@ const NavBar = ({ categories, cartProducts }) => {
           {user &&
            <div className="animate__animated collapse navbar-collapse" id="navbarResponsive">
                     <ul id="bgNavMenu" className="navbar-nav ml-auto my-2 my-lg-0">                      
-                        {categories.map(category => <li className="nav-item"><NavLink key={category.id} to={`/category/${category.id}`}>{category.description}</NavLink></li>)}     
+                        {categories.map(category => <li className="nav-item"><NavLink key={category.id} to={`/reactJs-coderhouse/category/${category.id}`}>{category.description}</NavLink></li>)}     
                     </ul>
           </div>  
           } 
@@ -40,7 +40,7 @@ const NavBar = ({ categories, cartProducts }) => {
       <div className="rightNav">          
           <button type="button" className="btn btn-lg btn-secondary"><strong>Login</strong></button>
           <button type="button" className="btn btn-outline-light "><strong>Sign-up</strong></button>
-        <Link to='/cart'>
+        <Link to='/reactJs-coderhouse/cart'>
           <CartWidget quantity={productQuantity} />
         </Link>
       </div>

@@ -33,7 +33,7 @@ const Item = ({ product }) => {
           </strong>
         </h6>
       }
-      { !product.quantity && <Link to={`/item/${product.id}`} className='btn btn-primary'><strong>Quiero !</strong></Link> }
+      { !product.quantity && <Link to={`/reactJs-coderhouse/item/${product.id}`} className='btn btn-primary'><strong>Quiero !</strong></Link> }
       </div>
     </div>
     </div>    
