@@ -1,31 +1,43 @@
-import {useState, useContext } from 'react'
+import {useState, 
+    useContext,
+    useEffect
+} from 'react'
+import NotificationContext from '../../context/NotificationContext'
+import CartContext from '../../context/CartContext'
 import 'bootstrap/dist/css/bootstrap.css';
-import NotificationContext from '../../context/NotificationContext.js'
 
-const ItemCount = ({product, productsAdded, addProdFunction})=> {
-   const [quantity,setQuantity] = useState(0)
-   const { setNotification } = useContext(NotificationContext)
+const ItemCount = ({product, setCount})=> {
+    const [quantity, setQuantity] = useState(0)
+    const { setNotification } = useContext(NotificationContext)
+    const { addItem, isInCart, getProduct } = useContext(CartContext)
 
-   const onAdd = () => {
-       if(quantity < product.stock) {
-           setQuantity(quantity+1)
-       }
-   }
+    useEffect(() => {
+        if(isInCart(product.id)) {
+           const oldQuantity = getProduct(product.id)?.quantity
+           setQuantity(oldQuantity)
+        }
+        return(() => {
+            setQuantity(0)
+        })
+    }, [product, getProduct, isInCart])
 
-   const onRemove = () => {
-       if(quantity > 0) {
-           setQuantity(quantity - 1)
-       }     
-   }
+    const onAdd = () => {
+        if(quantity < product.stock) {
+            setQuantity(quantity+1)
+        }
+    } 
 
-   const onAddtoCart = () =>{
-       const newProduct = {
-           ...product,
-           quantity: quantity
-       } 
-       addProdFunction([...productsAdded, newProduct])
-       setNotification('success', `${product.name} ha sido agregado al carrito`)
-   }
+    const onRemove = () => {
+        if(quantity > 0) {
+            setQuantity(quantity - 1)
+        }     
+    }
+
+    const onAddtoCart = () =>{
+        addItem(product, quantity)
+        setCount(quantity) 
+        setNotification('success', `${product.name} ha sido agregado al carrito`)
+    }
 
 
    
@@ -42,7 +54,7 @@ const ItemCount = ({product, productsAdded, addProdFunction})=> {
                    <br/>
                    <br/>                  
                    <tr>                   
-                       <td align="right" colSpan="5"><button className='btn btn-secondary' onClick={()=>onAddtoCart()}>Agregar al carrito</button></td>
+                       <td align="right" colSpan="5"><button className='btn btn-secondary' onClick={()=>onAddtoCart()}><strong>Agregar al carrito</strong></button></td>
                    </tr>
                </tbody>
            </table>       

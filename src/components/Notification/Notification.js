@@ -9,8 +9,8 @@ const Notification = () => {
   }
 
   return (
-    <div 
-    style={{ color: notification.severity === 'error' ? 'red' : 'green'}} >
+    <div
+    style={{ color: notification.severity === 'error' ? 'black' : 'black'}} >
       {notification.message}
     </div>
   )

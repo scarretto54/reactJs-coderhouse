@@ -1,12 +1,16 @@
+import { useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import 'bootstrap/dist/css/bootstrap.css';
-
+import {Link} from 'react-router-dom'
+import UserContext from '../../context/UserContext'
 
 const ItemDetail = ({ product, productsAdded, addProdFunction }) => {
+    const [count, setCount] = useState(0)
+    const {user} = useContext(UserContext)
 
     if(!product) {
         return <h3>{`Ese producto ya no existe`}</h3>
-    } 
+    }  
     
     return (
     <div className="row-md-2 black">
@@ -32,7 +36,7 @@ const ItemDetail = ({ product, productsAdded, addProdFunction }) => {
     </h6>
     <h6 className="card-text" Style='color: black; display:block; '>
         <strong>
-            {`Categoria: ${product.category} `}
+            {`Categoria: ${product.catname} `}
         </strong>
     </h6>
     <h6 className="card-text" Style='color: black; display:block; '>
@@ -41,8 +45,14 @@ const ItemDetail = ({ product, productsAdded, addProdFunction }) => {
         </strong>    
     </h6>
     <div className="row p-4">
-       <ItemCount  Style='aling: center' product={product} productsAdded={productsAdded} addProdFunction={addProdFunction} />
-       </div>
+    {
+            count === 0 && user
+            ? <ItemCount  Style='aling: center' product={product} productsAdded={productsAdded} addProdFunction={addProdFunction} setCount={setCount} />
+            : user 
+            ? <Link to='/reactJs-coderhouse/cart'><button className="btn btn-light"><strong>Ir al carrito</strong></button></Link>
+            : <Link to='/login'><button className="btn btn-light"><strong>Login</strong></button></Link>
+    }
+    </div>
     </div>
     </div>
     </div>

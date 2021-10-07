@@ -2,33 +2,34 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
-import { getProducts } from '../../products'
 import { useParams } from 'react-router-dom'
-
+import { getProducts } from '../../services/firebase/firebase'
 
 const ItemListContainer = ()=> {
     const [products, setProducts] = useState([])
-    const {categoryid} = useParams()
+    const { categoryid } = useParams()
     const [loading, setLoading] = useState(true)
     
     useEffect(() => {
-        const list = getProducts(categoryid)
-        list.then(list => {
-            setProducts(list)
+        setLoading(true)
+        getProducts('category', '==', categoryid).then(products => {
+            setProducts(products)
+        }).catch((error) => {
+            console.log(error)
+        }).finally(() => {
             setLoading(false)
         })
 
         return (() => {
-            setProducts([])
             setLoading(true)
+            setProducts([])
         })
-
     }, [categoryid])
 
 
     return (
         <div className="ItemListContainer" >
-             {loading? "Loading..":<ItemList products={products} categoryid={categoryid} />}
+             { loading ? <div className="spinner-border justify-content-center" Style="width: 5rem; height: 5rem;" Role="status"/> :<ItemList products={products} categoryid={categoryid} />}
         </div>
     )    
     

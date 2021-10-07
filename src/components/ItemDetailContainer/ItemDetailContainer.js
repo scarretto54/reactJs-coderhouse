@@ -2,32 +2,32 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import './ItemDetailContainer.css'
-import { getProductById } from '../../products'
+import { getProductById } from '../../services/firebase/firebase'
 
-const ItemDetailContainer = ({ productsAdded, addProdFunction }) => {
+const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState(undefined)
     const [loading, setLoading] = useState(true)
     const {itemid} = useParams()
     
     useEffect(() => {
-        
-        getProductById(itemid).then(result => {
-            setProduct(result)
+        setLoading(true)
+        getProductById(itemid).then(product => {
+            setProduct(product)
+        }).catch((error) => {
+            console.log(error)
+        }).finally(() => {
             setLoading(false)
-            }
-        )
-
+        })
         return (() => {
+            setLoading(true)
             setProduct(undefined)
-        }
-        )
-
+        })
     },[itemid])
 
     return (
         <div className='ItemDetailContainer' >
-            {loading ? "Loading.." : <ItemDetail product={product} itemid={itemid} productsAdded={productsAdded} addProdFunction={addProdFunction}/>}    
+            {loading ? <div className="spinner-border justify-content-center" Style="width: 5rem; height: 5rem;" Role="status"/> : <ItemDetail product={product} />}    
         </div>
     )
 }

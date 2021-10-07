@@ -1,8 +1,11 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
-
+import CartContext from '../../context/CartContext'
 
 const Item = ({ product }) => {
+  const { removeProduct } = useContext(CartContext)
+
   return (
     <div className="g-col-6">
       <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -18,7 +21,7 @@ const Item = ({ product }) => {
       </h5>    
       <h6 className="card-text" Style='color: black; display:block; '>
       <strong>
-        {`Categoria: ${product.category} `}
+        {`Categoria: ${product.catname} `}
       </strong>
       </h6>
       <h6 className="card-text" Style='color: black; display:block; '>
@@ -33,7 +36,10 @@ const Item = ({ product }) => {
           </strong>
         </h6>
       }
-      { !product.quantity && <Link to={`/reactJs-coderhouse/item/${product.id}`} className='btn btn-primary'><strong>Quiero !</strong></Link> }
+       { product?.quantity 
+          ? <button onClick={() => removeProduct(product.id)} className='btn btn-outline-danger'><strong>Quitar del carrito</strong></button> 
+          : <Link to={`/reactJs-coderhouse/item/${product.id}`} className='btn btn-primary'><strong>Quiero !</strong></Link> }
+      
       </div>
     </div>
     </div>    

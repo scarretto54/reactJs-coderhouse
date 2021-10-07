@@ -1,7 +1,8 @@
+import React from 'react'
 import Item from "../Item/Item"
 import 'bootstrap/dist/css/bootstrap.css';
 
-const ItemList = ({products,categoryid}) => {
+const ItemList = ({products}) => {
 
   if(products.length === 0) {
     return <h1><strong>No hay productos disponibles</strong></h1>
@@ -13,4 +14,4 @@ const ItemList = ({products,categoryid}) => {
     </div>
   )
 }
-export default ItemList
+export default React.memo(ItemList)

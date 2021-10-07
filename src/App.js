@@ -1,37 +1,36 @@
-import { useState, useEffect } from 'react'
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import NavBar from './components/NavBar/NavBar'
 import Cart from './components/Cart/Cart'
 import Notification from './components/Notification/Notification'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import './App.css'
 import { getCategories } from './products'
 import { NotificationContextProvider } from './context/NotificationContext'
-import { UserContext } from './context/UserContext'
+import { useContext } from 'react'
+import Login from './components/Login/Login'
+import PrivateRoute from './components/PrivateRoute/PrivateRoute'
+import { CartContextProvider } from './context/CartContext'
+import UserContext from './context/UserContext'
+
 
 
 const App = () => {
-  const [cartProducts, setCartProduct] = useState([])
-  const [user, setUser] = useState(undefined)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setUser('Santiago')
-    }, 200)
-  }, [])
+  const { user } = useContext(UserContext)
 
   return (
     <div className="App">
-      <NotificationContextProvider>      
+      <NotificationContextProvider>   
+      <CartContextProvider>   
         <BrowserRouter>  
-        <header className="App-header  sticky-top py-1">      
-          <UserContext.Provider value={user}>
-            <NavBar categories={getCategories()} cartProducts={cartProducts}/> 
-          </UserContext.Provider> 
-        </header>
-          <Notification />          
+        <header className="App-header  sticky-top py-1"> 
+          <NavBar />             
+        </header>                  
           <main className="App-main">
+          <h3>
+          <Notification />
+          </h3>
             <Switch>
             <Route exact path='/reactJs-coderhouse/'>
                 <ItemListContainer />
@@ -40,16 +39,23 @@ const App = () => {
                 <ItemListContainer />
               </Route>
               <Route path='/reactJs-coderhouse/item/:itemid'>
-                <ItemDetailContainer productsAdded={cartProducts} addProdFunction={setCartProduct}/>
+                <ItemDetailContainer />
               </Route>
-              <Route path='/reactJs-coderhouse/cart'>
-                <Cart productsAdded={cartProducts} addProdFunction={setCartProduct}/>
+              <PrivateRoute path='/reactJs-coderhouse/cart' user={user}>
+                <Cart />
+              </PrivateRoute>
+              <Route path='/login'>
+                  <Login/>
               </Route>
             </Switch>  
-            </main>
-            <footer className="App-footer">
-            </footer>            
-        </BrowserRouter>        
+            </main>              
+            <footer className="App-footer d-flex flex-wrap  align-items-center py-3 ">
+              <div className="col-md-4 d-flex align-items-center">
+                <span className="text-muted sm-2"><strong>QuieroVino© 2021 Company</strong></span>
+              </div>
+            </footer>                       
+        </BrowserRouter> 
+        </CartContextProvider>       
       </NotificationContextProvider>
     </div>
   )
