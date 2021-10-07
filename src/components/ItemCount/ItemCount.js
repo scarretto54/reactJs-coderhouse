@@ -45,7 +45,7 @@ const ItemCount = ({product, setCount})=> {
        <div >          
            <table >
                <tbody>
-                   <tr class="btn-group" role="group">
+                   <tr className="btn-group" Role="group">
                        <td align="left"><button className="btn btn-outline-secondary" onClick={()=> onRemove() }><strong>-</strong></button></td>
                        <td align="center"><button className="btn btn-outline" Style={{fontSize : '20px'}} ><strong>{quantity}</strong></button></td>
                        <td align="right"><button className="btn btn-outline-secondary" onClick={() => onAdd() }><strong>+</strong></button></td>

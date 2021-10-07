@@ -30,8 +30,8 @@ const NavBar = () => {
 
   const handleLogout = () => {
     logout()
-    setNotification('error', `Hasta luego ${user}`)
-    history.push('/reactJs-coderhouse/')
+    setNotification('error', `Hasta luego ${user}`)   
+    history.push('/reactJs-coderhouse/') 
   }
 
 

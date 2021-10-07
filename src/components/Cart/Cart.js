@@ -36,7 +36,9 @@ const Cart = () => {
             address: contact.address,
             comment: contact.comment
         }
-         
+
+        console.log(objOrder)
+
         createOrder(objOrder).then(msg => {
             setNotification('success', msg)
             history.push('/reactJs-coderhouse/')
@@ -49,15 +51,13 @@ const Cart = () => {
                 phone: '',
                 address: '',
                 comment: ''
-            })
-            history.push('/reactJs-coderhouse/')
+            })            
         })
     }
     
     return ( 
         <div>
-            <h1><strong>Mi Carrito</strong></h1>           
-            
+            <h1><strong>Mi Carrito</strong></h1>          
             <Link to='/reactJs-coderhouse/'><button className="btn btn-info"><strong>Quiero ver mas !</strong></button></Link>
             {(!processingOrder && contact.phone !== '' && contact.address !== '' && contact.comment !== '') &&
                 <div>
