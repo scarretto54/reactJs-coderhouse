@@ -49,7 +49,7 @@ const Cart = () => {
                 address: '',
                 comment: ''
             })
-            history.push('/category/celulares')
+            history.push('/reactJs-coderhouse/')
         })
     }
     

@@ -28,7 +28,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     logout()
-    setNotification('error', `Hasta luego ${user}`)
+    setNotification('error', `Hasta luego ${user}`)    
   }
 
 
