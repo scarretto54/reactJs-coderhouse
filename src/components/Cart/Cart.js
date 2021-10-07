@@ -39,6 +39,7 @@ const Cart = () => {
          
         createOrder(objOrder).then(msg => {
             setNotification('success', msg)
+            history.push('/reactJs-coderhouse/')
         }).catch(error => {
             setNotification('error', error)
         }).finally(() => {

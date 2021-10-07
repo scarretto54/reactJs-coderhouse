@@ -7,6 +7,7 @@ import UserContext from '../../context/UserContext'
 import CartContext from '../../context/CartContext'
 import NotificationContext from '../../context/NotificationContext'
 import { getCategories } from '../../services/firebase/firebase'
+import { useHistory } from 'react-router'
 import logo from './logo.png'
 
 const NavBar = () => {
@@ -14,6 +15,7 @@ const NavBar = () => {
   const { user, logout } = useContext(UserContext)
   const { getQuantity } = useContext(CartContext)
   const { setNotification } = useContext(NotificationContext)
+  const history = useHistory()
 
   useEffect(() => {
     getCategories().then(categories => {
@@ -28,7 +30,8 @@ const NavBar = () => {
 
   const handleLogout = () => {
     logout()
-    setNotification('error', `Hasta luego ${user}`)    
+    setNotification('error', `Hasta luego ${user}`)
+    history.push('/reactJs-coderhouse/')
   }
 
 
