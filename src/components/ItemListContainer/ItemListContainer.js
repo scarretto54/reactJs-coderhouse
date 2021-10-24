@@ -28,7 +28,7 @@ const ItemListContainer = ()=> {
 
 
     return (
-        <div className="ItemListContainer" >
+        <div className="container ItemListContainer" >
              { loading ? <div className="spinner-border justify-content-center" Style="width: 5rem; height: 5rem;" Role="status"/> :<ItemList products={products} categoryid={categoryid} />}
         </div>
     )    

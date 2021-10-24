@@ -1,5 +1,5 @@
 import { useState, useContext, useRef } from 'react'
-import './Cart.css'
+
 import 'bootstrap/dist/css/bootstrap.css'
 import ItemList from "../ItemList/ItemList"
 import Togglable from '../Togglable/Togglable'
@@ -56,7 +56,7 @@ const Cart = () => {
     }
     
     return ( 
-        <div>
+        <div className="cart">
             <h1><strong>Mi Carrito</strong></h1>          
             <Link to='/reactJs-coderhouse/'><button className="btn btn-info"><strong>Quiero ver mas !</strong></button></Link>
             {(!processingOrder && contact.phone !== '' && contact.address !== '' && contact.comment !== '') &&

@@ -7,10 +7,10 @@ const Item = ({ product }) => {
   const { removeProduct } = useContext(CartContext)
 
   return (
-    <div className="g-col-6">
+        <div className="col-md-6 sm-6">
       <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-      <div className="col-auto d-none d-lg-block">
-        <img width="240" height="250" preserveAspectRatio="xMidYMid slice" focusable="false" src={product.img} alt={product.name} className="ItemImg"/> 
+      <div className="col d-none d-lg-block">
+        <img Width="240" Height="250" preserveAspectRatio="xMidYMid slice" Focusable="false" src={product.img} alt={product.name} className="ItemImg"/> 
       </div>
       <div className="col p-4 d-flex flex-column position-static">
       
@@ -42,7 +42,8 @@ const Item = ({ product }) => {
       
       </div>
     </div>
-    </div>    
+    </div>  
+    
     )
 }
 export default Item

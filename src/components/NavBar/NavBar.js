@@ -30,28 +30,31 @@ const NavBar = () => {
 
   const handleLogout = () => {
     logout()
-    setNotification('error', `Hasta luego ${user}`)   
+    setNotification('logout', `Hasta luego ${user}`)   
     history.push('/reactJs-coderhouse/') 
   }
 
 
   return (
-    <nav className="NavBar navbar navbar-dark navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div className="Nav-logo" >
+    <nav className="NavBar navbar  navbar-dark navbar-expand-lg navbar-light fixed-top" id="mainNav">
+     
+    <div className="Nav-logo container" >
         <Link to={'/reactJs-coderhouse/'}>
         <img src={logo} className="logo" alt="logo"/>
         </Link>
       </div>
-      <div className="leftNav container">          
-          <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+      <div className="leftNav container container-fluid d-flex flex-wrap ">          
+      <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
           <div className="animate__animated collapse navbar-collapse" id="navbarResponsive">
                     <ul id="bgNavMenu" className="navbar-nav ml-auto my-2 my-lg-0">                      
                     {categories?.map(category => <li className="nav-item"><NavLink key={category.id} to={`/reactJs-coderhouse/category/${category.id}`}>{category.description}</NavLink></li>)}     
                     </ul>
           </div>  
-          
-        </div>        
-      <div className="rightNav"> 
+    
+        </div>       
+         
+      <div className="rightNav container justify-content-evenly"> 
+      
       {user          
           ? <button className="btn btn-lg btn-light" onClick={handleLogout} ><strong>Logout</strong></button>
           : <Link to='/login'><button type="button" className="btn btn-lg btn-secondary"><strong>Login</strong></button></Link>
@@ -63,8 +66,13 @@ const NavBar = () => {
           <CartWidget />
         </Link>
         }
-      </div>
+        </div>
+      
     </nav>
   )
 } 
 export default NavBar
+
+
+
+ 

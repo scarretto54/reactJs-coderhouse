@@ -13,13 +13,13 @@ import {
 } from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD0mLygVvLmijDPCVAq0TQzMWtF6-cGk2k",
-    authDomain: "quierovino.firebaseapp.com",
-    projectId: "quierovino",
-    storageBucket: "quierovino.appspot.com",
-    messagingSenderId: "748077893397",
-    appId: "1:748077893397:web:5c21d8cae942cdb4510b1c",
-    measurementId: "G-Z4LX1CRY1M"
+    apiKey: process.env.REACT_APP_apikey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
+    measurementId: process.env.REACT_APP_measurementId
 }
 
 const app = firebase.initializeApp(firebaseConfig)
@@ -98,4 +98,5 @@ export const createOrder = (objOrder) => {
             })
     }})
 }
+
 

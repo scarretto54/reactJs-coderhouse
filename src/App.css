@@ -2,7 +2,7 @@
   text-align: center;
   display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh 100% 15vh;
+    grid-template-rows: 15vh 100% 15vh;
     grid-template-areas: "header"
                           "main"
                           "footer";
@@ -11,7 +11,7 @@
 .App-header {
   grid-area: header;
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: row;
   align-items: center;

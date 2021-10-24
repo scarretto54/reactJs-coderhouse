@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import NotificationContext from '../../context/NotificationContext'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const Notification = () => {
   const { notification }  = useContext(NotificationContext)
@@ -9,10 +10,12 @@ const Notification = () => {
   }
 
   return (
-    <div
-    style={{ color: notification.severity === 'error' ? 'black' : 'black'}} >
-      {notification.message}
-    </div>
+
+            <div className="alert alert-secondary" role="alert"
+            style={{ color: notification.severity === 'error' ? 'red' : 'grey'}} >
+              {notification.message}
+            </div>
+
   )
 }
 

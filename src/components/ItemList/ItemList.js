@@ -5,11 +5,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 const ItemList = ({products}) => {
 
   if(products.length === 0) {
-    return <h1><strong>No hay productos disponibles</strong></h1>
+    return <h2><strong>No hay productos disponibles</strong></h2>
   } 
 
   return (
-    <div className="grid" >
+    <div className="container row mb-2" >
       {products.map(product =><Item key={product.id} product={product}/>)}
     </div>
   )
