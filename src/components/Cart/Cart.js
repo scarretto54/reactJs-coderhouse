@@ -11,12 +11,12 @@ import { createOrder } from '../../services/firebase/firebase'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 
-
 const Cart = () => {
     const [processingOrder, setProcessingOrder] = useState(false)
     const [contact, setContact] = useState({
         phone: '',
         address: '',
+        email: '',
         comment: ''
     })
     const { products, clearCart, getTotal } = useContext(CartContext)
@@ -34,6 +34,7 @@ const Cart = () => {
             total: getTotal(),
             phone: contact.phone,
             address: contact.address,
+            email: contact.email,
             comment: contact.comment
         }
 
@@ -48,6 +49,7 @@ const Cart = () => {
             setContact({
                 phone: '',
                 address: '',
+                email: '',
                 comment: ''
             })            
         })
@@ -57,15 +59,16 @@ const Cart = () => {
         <div className="cart">
             <h1><strong>Mi Carrito</strong></h1>          
             <Link to='/reactJs-coderhouse/'><button className="btn btn-info"><strong>Quiero ver mas !</strong></button></Link>
-            {(!processingOrder && contact.phone !== '' && contact.address !== '' && contact.comment !== '') &&
+            {(!processingOrder && contact.phone !== '' && contact.address !== ''  && contact.email !== '' && contact.comment !== '') &&
                 <div>
                     <span><strong>Telefono: {contact.phone}   </strong></span>                    
-                    <span><strong>Direccion: {contact.address}</strong></span>
-                    <p><strong>Comentario: {contact.comment}</strong></p>
-                    <button onClick={() => setContact({ phone: '', address: '', comment: ''})} className='btn btn-outline-danger' ><strong>Borrar datos de contacto</strong></button>
+                    <span><strong>Direccion: {contact.address}   </strong></span>
+                    <span><strong>E-mail: {contact.email}   </strong></span>
+                    <p><strong>Comentario: {contact.comment}    </strong></p>
+                    <button onClick={() => setContact({ phone: '', address: '', email: '', comment: ''})} className='btn btn-outline-danger' ><strong>Borrar datos de contacto</strong></button>
                 </div>    
             }
-            {(!processingOrder && products.length) > 0 && <Togglable buttonLabelShow={(contact.phone !== '' && contact.address !== '' && contact.comment !== '') ? 'Editar contacto' : 'Agregar datos de contacto'} ref={contactFormRef}>
+            {(!processingOrder && products.length) > 0 && <Togglable buttonLabelShow={(contact.phone !== '' && contact.address !== '' && contact.email !== '' && contact.comment !== '') ? 'Editar contacto' : 'Agregar datos de contacto'} ref={contactFormRef}>
                                                             <ContactForm toggleVisibility={contactFormRef} setContact={setContact} />
                                                           </Togglable> }
             <br/>

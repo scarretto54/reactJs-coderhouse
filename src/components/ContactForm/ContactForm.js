@@ -6,6 +6,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
     const [phone, setPhone] = useState('')
     const [address, setAddress] = useState('')
     const [comment, setComment] = useState('')
+    const [email, setEmail] = useState('')
 
     const handleContactForm = (e) => {
         e.preventDefault()
@@ -14,12 +15,14 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
         const objContact = {
             phone,
             address,
+            email,
             comment
         }
         setContact(objContact)
         setPhone('')
         setAddress('')
         setComment('')
+        setEmail('')
     }
 
     return (
@@ -32,6 +35,14 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                 type='text'
                 value={phone}
                 onChange={({ target }) => setPhone(target.value)}
+              />
+            </label>
+            <label className='LabelContact'>E-mail:
+              <input
+                className='form-control'
+                type='text'
+                value={email}
+                onChange={({ target }) => setEmail(target.value)}
               />
             </label>
             <label className='LabelContact'>Direccion:

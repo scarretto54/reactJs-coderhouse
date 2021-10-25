@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div className='ItemDetailContainer' >
-            {loading ? <div className="spinner-border justify-content-center" Style="width: 5rem; height: 5rem;" Role="status"/> : <ItemDetail product={product} />}    
+            {loading ? <div className="spinner-border justify-content-center" Style="width: 5rem; height: 5rem;" role="status"/> : <ItemDetail product={product} />}    
         </div>
     )
 }
