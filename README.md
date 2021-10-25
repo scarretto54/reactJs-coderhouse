@@ -5,6 +5,8 @@ QuieroVino Tienda es un e-commerce destinado a una vinoteca, podrás encontrar v
 - Listado de productos emplazado en mi home page.
 - Filtro de productos por categorías, utilizando el menú de navegación.
 - Detalle de producto, al seleccionar un producto en específico.
+- CartWidget en el menu de navegacion relacionado al user.
+- Cart que permite concretar la operacion enviando informacion de la misma a la base de datos.
 
 
 ##  Instalación

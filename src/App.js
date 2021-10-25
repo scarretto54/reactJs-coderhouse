@@ -12,7 +12,7 @@ import Login from './components/Login/Login'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import { CartContextProvider } from './context/CartContext'
 import UserContext from './context/UserContext'
-import Footer from './components/NavBar/Footer'
+import Footer from './components/Footer/Footer'
 
 
 
