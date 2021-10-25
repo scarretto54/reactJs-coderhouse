@@ -37,9 +37,7 @@ const Cart = () => {
             comment: contact.comment
         }
 
-        console.log(objOrder)
-
-        createOrder(objOrder).then(msg => {
+            createOrder(objOrder).then(msg => {
             setNotification('success', msg)
             history.push('/reactJs-coderhouse/')
         }).catch(error => {
