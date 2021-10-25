@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import './ContactForm.css'
 import 'bootstrap/dist/css/bootstrap.css';
-
+import NotificationContext from '../../context/NotificationContext'
 
 
 const ContactForm = ({ toggleVisibility, setContact }) => {
@@ -10,12 +10,18 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
     const [comment, setComment] = useState('')
     const [email, setEmail] = useState('')
     const [emailCheck, setEmailCheck] = useState('')
-    
+    const { setNotification } = useContext(NotificationContext)
     
 
     const handleContactForm = (e) => {
-      
+            
         e.preventDefault()
+
+        if(email !== emailCheck){
+          setNotification('success', 'Los E-mail no son iguales.')
+        }
+        else {
+
         toggleVisibility.current.toggleVisibility()
 
         
@@ -32,7 +38,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
         setEmail('')
         setEmailCheck('')
         setComment('')
-      
+      }
     }
 
     return (
@@ -61,8 +67,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
               <input
                 className='form-control'
                 type='text'
-                value={emailCheck}
-                validation={email === emailCheck}
+                value={emailCheck}                
                 onChange={({ target }) => setEmailCheck(target.value)}                
                 required/>
             </label>
