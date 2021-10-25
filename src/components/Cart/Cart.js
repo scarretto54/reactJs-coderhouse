@@ -1,5 +1,4 @@
 import { useState, useContext, useRef } from 'react'
-
 import 'bootstrap/dist/css/bootstrap.css'
 import ItemList from "../ItemList/ItemList"
 import Togglable from '../Togglable/Togglable'
@@ -17,6 +16,7 @@ const Cart = () => {
         phone: '',
         address: '',
         email: '',
+        emailCheck: '',
         comment: ''
     })
     const { products, clearCart, getTotal } = useContext(CartContext)
@@ -50,15 +50,17 @@ const Cart = () => {
                 phone: '',
                 address: '',
                 email: '',
+                emailCheck: '',
                 comment: ''
             })            
         })
     }
     
     return ( 
-        <div className="cart">
-            <h1><strong>Mi Carrito</strong></h1>          
-            <Link to='/reactJs-coderhouse/'><button className="btn btn-info"><strong>Quiero ver mas !</strong></button></Link>
+        <div className="cart container">
+            
+            <h2><strong>Mi Carrito</strong></h2>   
+            {(!processingOrder && products.length > 0) && <button onClick={() => clearCart()} className="btn btn-outline-danger"><strong>Cancelar compra</strong></button>}
             {(!processingOrder && contact.phone !== '' && contact.address !== ''  && contact.email !== '' && contact.comment !== '') &&
                 <div>
                     <span><strong>Telefono: {contact.phone}   </strong></span>                    
@@ -66,16 +68,17 @@ const Cart = () => {
                     <span><strong>E-mail: {contact.email}   </strong></span>
                     <p><strong>Comentario: {contact.comment}    </strong></p>
                     <button onClick={() => setContact({ phone: '', address: '', email: '', comment: ''})} className='btn btn-outline-danger' ><strong>Borrar datos de contacto</strong></button>
-                </div>    
+                </div>   
             }
             {(!processingOrder && products.length) > 0 && <Togglable buttonLabelShow={(contact.phone !== '' && contact.address !== '' && contact.email !== '' && contact.comment !== '') ? 'Editar contacto' : 'Agregar datos de contacto'} ref={contactFormRef}>
                                                             <ContactForm toggleVisibility={contactFormRef} setContact={setContact} />
                                                           </Togglable> }
             <br/>
             {!processingOrder ? <ItemList products={products} /> : 'Procesando Orden'}
+
             {(products.length > 0 && !processingOrder) && <h3><strong>Total: ${getTotal()}</strong></h3>}
-            {(!processingOrder && products.length > 0) && <button onClick={() => confirmOrder()} className='btn btn-primary'><strong>Confirmar Compra</strong></button>} <br/>
-            {(!processingOrder && products.length > 0) && <button onClick={() => clearCart()} className="btn btn-outline-danger"><strong>Cancelar compra</strong></button>}
+            <Link to='/reactJs-coderhouse/'><button className="btn btn-info"><strong>Quiero ver mas !</strong></button></Link>   {(!processingOrder && products.length > 0) && <button onClick={(contact.phone !== '' && contact.address !== '' && contact.email !== '' && contact.comment !== '') ? () => confirmOrder() : () => setNotification('success', 'Cargar datos de contacto') } className='btn btn-primary'><strong>Confirmar Compra</strong></button>} 
+       
         </div>
     )
 }

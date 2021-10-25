@@ -2,27 +2,37 @@ import { useState } from 'react'
 import './ContactForm.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
+
+
 const ContactForm = ({ toggleVisibility, setContact }) => {
     const [phone, setPhone] = useState('')
     const [address, setAddress] = useState('')
     const [comment, setComment] = useState('')
     const [email, setEmail] = useState('')
+    const [emailCheck, setEmailCheck] = useState('')
+    
+    
 
     const handleContactForm = (e) => {
+      
         e.preventDefault()
         toggleVisibility.current.toggleVisibility()
 
+        
         const objContact = {
             phone,
             address,
             email,
+            emailCheck,
             comment
         }
         setContact(objContact)
         setPhone('')
         setAddress('')
-        setComment('')
         setEmail('')
+        setEmailCheck('')
+        setComment('')
+      
     }
 
     return (
@@ -35,6 +45,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                 type='text'
                 value={phone}
                 onChange={({ target }) => setPhone(target.value)}
+                required
               />
             </label>
             <label className='LabelContact'>E-mail:
@@ -42,8 +53,18 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                 className='form-control'
                 type='text'
                 value={email}
-                onChange={({ target }) => setEmail(target.value)}
+                onChange={({ target }) => setEmail(target.value)}                                
+                required
               />
+            </label>
+                        <label className='LabelContact'> Confirmar E-mail:
+              <input
+                className='form-control'
+                type='text'
+                value={emailCheck}
+                validation={email === emailCheck}
+                onChange={({ target }) => setEmailCheck(target.value)}                
+                required/>
             </label>
             <label className='LabelContact'>Direccion:
               <input
@@ -51,6 +72,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                 type='text'
                 value={address}
                 onChange={({ target }) => setAddress(target.value)}
+                required
               />
             </label>
             <label className='LabelContact'>Comentario:
@@ -59,6 +81,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                 type='text'
                 value={comment}
                 onChange={({ target }) => setComment(target.value)}
+                required
               />
             </label>
             <br/>
