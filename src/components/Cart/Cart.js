@@ -7,7 +7,6 @@ import UserContext from '../../context/UserContext'
 import CartContext from '../../context/CartContext'
 import NotificationContext from '../../context/NotificationContext'
 import { createOrder } from '../../services/firebase/firebase'
-import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
@@ -23,7 +22,7 @@ const Cart = () => {
     const { user } = useContext(UserContext)
     const { setNotification } = useContext(NotificationContext)
     const contactFormRef = useRef()
-    const history = useHistory()
+    
 
     const confirmOrder = () => {
         setProcessingOrder(true)
@@ -39,12 +38,11 @@ const Cart = () => {
         }
 
             createOrder(objOrder).then(msg => {
-            setNotification('success', msg)
-            history.push('/reactJs-coderhouse/')
+            setProcessingOrder(false) 
+            setNotification('success', msg)                     
         }).catch(error => {
             setNotification('error', error)
-        }).finally(() => {
-            setProcessingOrder(false)
+        }).finally(() => {            
             clearCart()
             setContact({
                 phone: '',
@@ -57,9 +55,8 @@ const Cart = () => {
     }
     
     return ( 
-        <div className="cart container">
-            
-            <h2><strong>Mi Carrito</strong></h2>   
+        <div className="cart container">            
+            {(!processingOrder && products.length > 0) && <h2><strong>Mi Carrito</strong></h2>}  
             {(!processingOrder && products.length > 0) && <button onClick={() => clearCart()} className="btn btn-outline-danger"><strong>Cancelar compra</strong></button>}
             {(!processingOrder && contact.phone !== '' && contact.address !== ''  && contact.email !== '' && contact.comment !== '') &&
                 <div>
@@ -74,9 +71,10 @@ const Cart = () => {
                                                             <ContactForm toggleVisibility={contactFormRef} setContact={setContact} />
                                                           </Togglable> }
             <br/>
-            {!processingOrder ? <ItemList products={products} /> : 'Procesando Orden'}
-
+            {!processingOrder ? <ItemList products={products} /> : 'Procesando Orden'}   
+            <br/>         
             {(products.length > 0 && !processingOrder) && <h3><strong>Total: ${getTotal()}</strong></h3>}
+            <br/>
             <Link to='/reactJs-coderhouse/'><button className="btn btn-info"><strong>Quiero ver mas !</strong></button></Link>   {(!processingOrder && products.length > 0) && <button onClick={(contact.phone !== '' && contact.address !== '' && contact.email !== '' && contact.comment !== '') ? () => confirmOrder() : () => setNotification('success', 'Cargar datos de contacto') } className='btn btn-primary'><strong>Confirmar Compra</strong></button>} 
        
         </div>
