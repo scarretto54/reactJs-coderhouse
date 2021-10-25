@@ -58,7 +58,7 @@ const NavBar = () => {
       {user          
           ? <button className="btn btn-lg btn-light" onClick={handleLogout} ><strong>Logout</strong></button>
           : <Link to='/login'><button type="button" className="btn btn-lg btn-secondary"><strong>Login</strong></button></Link>
-           // <button type="button" className="btn btn-outline-light "><strong>Sign-up</strong></button>
+           
         }
           {
         (user && getQuantity() > 0) &&
