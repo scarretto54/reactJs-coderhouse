@@ -24,6 +24,7 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 
+
 export const db = getFirestore(app)
 
 export const getCategories = () => {
@@ -66,7 +67,7 @@ export const getProductById = (itemid) => {
     })
 }
 
-export const createOrder = (objOrder) => {
+ export const createOrder = (objOrder) => {
     return new Promise((resolve, reject) => {
         objOrder = {
             ...objOrder,
@@ -87,11 +88,11 @@ export const createOrder = (objOrder) => {
                     
             })
         })
-
+        
         if(outOfStock.length === 0) {
-            addDoc(collection(db, 'orders'), objOrder).then(() => {
-                batch.commit().then(() => {
-                    resolve('Tu pedido se realizo con éxito, en breve nos pondremos en contacto.')
+            addDoc(collection(db, 'orders'), objOrder).then(({id}) => {
+                 batch.commit().then( () => {
+                    setTimeout(resolve('Tu pedido se realizo con éxito con el codigo: ' + id + ', en breve nos pondremos en contacto.'), 10000)
                 })
             }).catch((error) => {
                 reject('Error al ejecutar la orden: ' + error)
