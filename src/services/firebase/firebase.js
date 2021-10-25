@@ -92,7 +92,7 @@ export const getProductById = (itemid) => {
         if(outOfStock.length === 0) {
             addDoc(collection(db, 'orders'), objOrder).then(({id}) => {
                  batch.commit().then( () => {
-                    setTimeout(resolve('Tu pedido se realizo con éxito con el codigo: ' + id + ', en breve nos pondremos en contacto.'), 10000)
+                    resolve('Tu pedido se realizo con éxito con el codigo: ' + id + ' , en breve nos pondremos en contacto.')
                 })
             }).catch((error) => {
                 reject('Error al ejecutar la orden: ' + error)
