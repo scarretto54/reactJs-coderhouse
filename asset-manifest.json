@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reactJs-coderhouse/static/css/main.13cc229d.chunk.css",
-    "main.js": "/reactJs-coderhouse/static/js/main.9ce5b750.chunk.js",
-    "main.js.map": "/reactJs-coderhouse/static/js/main.9ce5b750.chunk.js.map",
+    "main.js": "/reactJs-coderhouse/static/js/main.20baa571.chunk.js",
+    "main.js.map": "/reactJs-coderhouse/static/js/main.20baa571.chunk.js.map",
     "runtime-main.js": "/reactJs-coderhouse/static/js/runtime-main.00dc425b.js",
     "runtime-main.js.map": "/reactJs-coderhouse/static/js/runtime-main.00dc425b.js.map",
     "static/css/2.983f79de.chunk.css": "/reactJs-coderhouse/static/css/2.983f79de.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.983f79de.chunk.css",
     "static/js/2.bee09799.chunk.js",
     "static/css/main.13cc229d.chunk.css",
-    "static/js/main.9ce5b750.chunk.js"
+    "static/js/main.20baa571.chunk.js"
   ]
 }
