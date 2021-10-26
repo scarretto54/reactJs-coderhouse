@@ -56,8 +56,8 @@ const Cart = () => {
     
     return ( 
         <div className="cart container">            
-            {(!processingOrder && products.length > 0) && <h2><strong>Mi Carrito</strong></h2>}  
-            {(!processingOrder && products.length > 0) && <button onClick={() => clearCart()} className="btn btn-outline-danger"><strong>Cancelar compra</strong></button>}
+            <h2><strong>Mi Carrito</strong></h2>   
+            <hr/>           
             {(!processingOrder && contact.phone !== '' && contact.address !== ''  && contact.email !== '' && contact.comment !== '') &&
                 <div>
                     <span><strong>Telefono: {contact.phone}   </strong></span>                    
@@ -73,8 +73,9 @@ const Cart = () => {
             <br/>
             {!processingOrder ? <ItemList products={products} /> : 'Procesando Orden'}   
             <br/>         
-            {(products.length > 0 && !processingOrder) && <h3><strong>Total: ${getTotal()}</strong></h3>}
-            <br/>
+            {(products.length > 0 && !processingOrder) && <span><strong>Total: ${getTotal()} </strong></span>}  
+             {(!processingOrder && products.length > 0) && <button onClick={() => clearCart()} className="btn btn-outline-danger"><strong>Cancelar compra</strong></button>}
+            <hr/>            
             <Link to='/reactJs-coderhouse/'><button className="btn btn-info"><strong>Quiero ver mas !</strong></button></Link>   {(!processingOrder && products.length > 0) && <button onClick={(contact.phone !== '' && contact.address !== '' && contact.email !== '' && contact.comment !== '') ? () => confirmOrder() : () => setNotification('success', 'Cargar datos de contacto') } className='btn btn-primary'><strong>Confirmar Compra</strong></button>} 
        
         </div>

@@ -30,17 +30,19 @@ const App = () => {
           <main className="App-main">        
           <Notification />
             <Switch>
-            <Route exact path='/reactJs-coderhouse/'>
+              
+              <Route exact path='/reactJs-coderhouse/'>
+              
+                <ItemListContainer />                
+              </Route>
+              <Route path='/reactJs-coderhouse/category/:categoryid'>              
                 <ItemListContainer />
               </Route>
-              <Route path='/reactJs-coderhouse/category/:categoryid'>
-                <ItemListContainer />
+              <Route path='/reactJs-coderhouse/item/:itemid'>             
+                <ItemDetailContainer />                
               </Route>
-              <Route path='/reactJs-coderhouse/item/:itemid'>
-                <ItemDetailContainer />
-              </Route>
-              <PrivateRoute path='/reactJs-coderhouse/cart' user={user}>
-                <Cart />
+              <PrivateRoute path='/reactJs-coderhouse/cart' user={user}>              
+                <Cart />                
               </PrivateRoute>
               <Route path='/login'>
                   <Login/>

@@ -8,8 +8,7 @@ const Notification = () => {
   if(notification.message === '') {
     return null
   }
-
-  return (
+    return (
 
             <div className="alert alert-secondary" Role="alert"
             Style={{ color: notification.severity === 'error' ? 'red' : 'grey'}} >

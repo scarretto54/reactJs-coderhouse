@@ -43,8 +43,11 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
 
     return (
         <div className='ContactContainer'>
+          <br/>
+          <form  onSubmit={handleContactForm}>
           <div><strong>Contacto</strong></div>
-          <form className='ContactForm' onSubmit={handleContactForm}>
+          <div className='ContactForm'>
+            <div className='col-2'>
             <label className='LabelContact'>Telefono:
               <input
                 className='form-control'
@@ -54,9 +57,20 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                 required
               />
             </label>
-            <label className='LabelContact'>E-mail:
+            <label className='LabelContact'>Direccion:
               <input
                 className='form-control'
+                type='text'
+                value={address}
+                onChange={({ target }) => setAddress(target.value)}
+                required
+              />
+            </label>
+            </div>
+            <div className='col-4'>
+            <label className='LabelContact'>E-mail:
+              <input
+                className='form-control col-8'
                 type='text'
                 value={email}
                 onChange={({ target }) => setEmail(target.value)}                                
@@ -71,28 +85,27 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                 onChange={({ target }) => setEmailCheck(target.value)}                
                 required/>
             </label>
-            <label className='LabelContact'>Direccion:
+            </div> 
+            </div>
+            <div className='ContactForm '>
+            <label className='LabelContact col-4'>Comentarios:
               <input
-                className='form-control'
-                type='text'
-                value={address}
-                onChange={({ target }) => setAddress(target.value)}
-                required
-              />
-            </label>
-            <label className='LabelContact'>Comentario:
-              <input
-                className='form-control'
+                className='form-control '
                 type='text'
                 value={comment}
                 onChange={({ target }) => setComment(target.value)}
                 required
               />
-            </label>
-            <br/>
+            </label> 
+            </div>
+           
+              
+            <div>  
+                        <hr/>
             <button className='btn btn-primary' type='submit'><strong>Confirmar</strong></button>
+            </div>
           </form>
-          <br/>
+
         </div>
       )
 }

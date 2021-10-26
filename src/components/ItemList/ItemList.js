@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 const ItemList = ({products}) => {
 
   if(products.length === 0) {
-    return <h2><strong>No hay productos disponibles</strong></h2>
+    return <h2><strong>No hay productos disponibles.</strong></h2>
   } 
 
   return (
